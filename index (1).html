@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>عيد ميلاد أموله 💜</title>
+<style>
+body{margin:0;font-family:Tahoma,sans-serif;background:linear-gradient(#fff,#f7ecff);overflow-x:hidden;color:#5a3a72}
+.screen{display:none;min-height:100vh;justify-content:center;align-items:center;flex-direction:column;padding:24px;text-align:center}
+.active{display:flex}
+h1{font-size:2.1rem}h2{margin:.4em 0}
+.btn{background:#b57edc;color:#fff;border:0;padding:14px 24px;border-radius:30px;font-size:1rem;cursor:pointer;margin:8px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.answers button{display:block;width:min(320px,90vw);margin:10px auto;padding:12px;border-radius:20px;border:1px solid #d8b8ef;background:#fff;cursor:pointer}
+#msg{color:#b00020;height:24px}
+textarea{width:min(700px,95vw);height:220px;border-radius:18px;border:1px solid #d8b8ef;padding:15px}
+video{width:min(700px,95vw);border-radius:18px;display:none}
+.flowers{position:fixed;inset:0;pointer-events:none}
+.fl{position:absolute;font-size:22px;animation:f 10s linear infinite}
+@keyframes f{from{transform:translateY(-10vh)}to{transform:translateY(110vh) translateX(40px)}}
+.heart{position:fixed;font-size:22px;animation:up 4s linear forwards}
+@keyframes up{from{transform:translateY(0);opacity:1}to{transform:translateY(-120vh);opacity:0}}
+#confetti{position:fixed;inset:0;pointer-events:none}
+svg{max-width:320px}
+</style>
+</head>
+<body>
+<div class="flowers"></div>
+<canvas id="confetti"></canvas>
+
+<section id="start" class="screen active">
+<h1>كل سنة وإنتِ طيبة يا أموله 🎂💜</h1>
+<h2>لأحن وأطيب وأجمل ماما في الدنيا 🌷</h2>
+<button class="btn" onclick="nextQ()">ابدئي المفاجأة 💜</button>
+</section>
+
+<section id="quiz" class="screen">
+<h2 id="q"></h2>
+<div class="answers" id="a"></div>
+<div id="msg"></div>
+</section>
+
+<section id="done" class="screen">
+<h2>مبروك يا أموله 🥹💜</h2>
+<p>جاوبتي كل الأسئلة صح.<br>يلا بقى شوفي المفاجأة اللي عملتهالك بنوتك الطعمة 😂💜</p>
+<button class="btn" onclick="showMessage()">💌 افتحي المفاجأة</button>
+</section>
+
+<section id="message" class="screen">
+<h2>💜 رسالتي ليكي 💜</h2>
+<textarea placeholder="اكتبي الرسالة هنا..."></textarea><br>
+<button class="btn" onclick="showVideo()">🎥 افتحي الفيديو</button>
+<video id="vid" controls>
+<source src="amola.mp4" type="video/mp4">
+</video>
+<br><br>
+<svg viewBox="0 0 220 220">
+<circle cx="70" cy="50" r="20" fill="#f5d0c5"/><circle cx="150" cy="50" r="20" fill="#f5d0c5"/>
+<path d="M55 75 q15 40 55 60 q40-20 55-60" fill="#d9b3ff"/>
+<path d="M75 70 q35 40 70 0" stroke="#c084fc" stroke-width="10" fill="none"/>
+<text x="20" y="190" font-size="18">🌹🌸🌷</text>
+</svg>
+<p><b>بحبك يا أموله… وربنا يخليكي ليا العمر كله. 💜</b></p>
+</section>
+
+<script>
+const qs=[
+["1- بتحبي مين أكتر?",["أنا 😂","أنا 😌","نونو 👑💜"],2],
+["2- مين أكتر واحد مطهقك?",["أنا 😌","عمرو 😒","منى 😂"],1],
+["3- مين أكتر واحدة قلبها أبيض?",["ماما أموله 👑💜","نونو 😂","عمرو 😒"],0],
+["4- مين أحسن وأطيب وأجمل ماما في الدنيا?",["أموله 💜👑","ماما برضو 😂","أكيد أموله 😍"],0],
+["5- مين بتحبي تنامي جنبه?",["نونو 💜🥹","المخدة 😂","بابا 😂❤️"],0]
+];
+let i=0;
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function nextQ(){show('quiz');render()}
+function render(){
+q.textContent=qs[i][0];a.innerHTML='';msg.textContent='';
+qs[i][1].forEach((t,n)=>{let b=document.createElement('button');b.textContent=t;b.onclick=()=>pick(n);a.appendChild(b)})
+}
+function pick(n){
+if(n===qs[i][2]){i++; if(i<qs.length)render(); else finish();}
+else msg.textContent="إجابة جميلة 😂💜 لكن جربي تاني.";
+}
+function finish(){show('done');confetti();hearts();}
+function showMessage(){show('message')}
+function showVideo(){document.getElementById('vid').style.display='block';document.getElementById('vid').play().catch(()=>{});}
+for(let k=0;k<24;k++){let s=document.createElement('div');s.className='fl';s.textContent=["🌸","🌷","🌹"][k%3];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*10+"s";document.querySelector('.flowers').appendChild(s);}
+function hearts(){for(let i=0;i<50;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='💜';h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';document.body.appendChild(h);setTimeout(()=>h.remove(),4000)},i*80)}
+function confetti(){
+const c=document.getElementById('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+let p=[];for(let i=0;i<180;i++)p.push({x:Math.random()*c.width,y:Math.random()*-c.height,r:2+Math.random()*4,v:2+Math.random()*4,c:`hsl(${Math.random()*360},90%,60%)`});
+let f=0;(function anim(){x.clearRect(0,0,c.width,c.height);p.forEach(o=>{x.fillStyle=o.c;x.fillRect(o.x,o.y,o.r,o.r*3);o.y+=o.v;if(o.y>c.height)o.y=-20;});if(f++<350)requestAnimationFrame(anim);})();
+}
+</script>
+</body></html>
