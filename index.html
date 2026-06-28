@@ -85,7 +85,17 @@ function pick(n){
 if(n===qs[i][2]){i++; if(i<qs.length)render(); else finish();}
 else msg.textContent="إجابة جميلة 😂💜 لكن جربي تاني.";
 }
-function finish(){show('done');confetti();hearts();}
+function finish(){
+    show('done');
+    confetti();
+    hearts();
+
+    setTimeout(()=>{
+        document.querySelectorAll('.f1,.f2').forEach(e=>e.remove());
+        const c = document.getElementById('confetti');
+        if(c) c.style.display = 'none';
+    },4000);
+}
 function showMessage(){show('message')}
 function showVideo(){document.getElementById('vid').style.display='block';document.getElementById('vid').play().catch(()=>{});}
 for(let k=0;k<24;k++){let s=document.createElement('div');s.className='fl';s.textContent=["🌸","🌷","🌹"][k%3];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*10+"s";document.querySelector('.flowers').appendChild(s);}
