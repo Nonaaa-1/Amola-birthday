@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>عيد ميلاد أموله 💜</title>
+<title>Happy Birthday Hosiii ❤️</title>
 <style>
 body{margin:0;font-family:Tahoma,sans-serif;background:linear-gradient(#fff,#f7ecff);overflow-x:hidden;color:#5a3a72}
 .screen{display:none;min-height:100vh;justify-content:center;align-items:center;flex-direction:column;padding:24px;text-align:center}
@@ -24,6 +24,9 @@ svg{max-width:320px}
 </style>
 </head>
 <body>
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 <div class="flowers"></div>
 <canvas id="confetti"></canvas>
 
@@ -40,19 +43,29 @@ svg{max-width:320px}
 </section>
 
 <section id="done" class="screen">
-<h2>مبروك يا أموله 🥹💜</h2>
-<p>جاوبتي كل الأسئلة صح.<br>يلا بقى شوفي المفاجأة اللي عملتهالك بنوتك الطعمة 😂💜</p>
-<button class="btn" onclick="showMessage()">💌 افتحي المفاجأة</button>
+<h2>❤️ Congratulations, Hoso! ❤️</h2>
+<p>You answered every question correctly! 🥹❤️<br>Now it's time for your surprise... 🎁❤️</p>
+<button class="btn" onclick="showMessage()">💌 Open My Letter</button>
 </section>
 
 <section id="message" class="screen">
-<h2>💜 رسالتي ليكي 💜</h2>
+<h2>❤️ To The Closest Person To My Heart ❤️</h2>
 <textarea readonly>
   
-كل سنه وانتى طببه ي احلا و اجمل اموله فى الدنيا كل سنه وانتى منوره دنيتى و كل سنه وانتى الحاجه الحلوه الى فى حياتى و نقطه ضعفى الوحيده ربنا يخليكى ليا يارب ينور عينى و يبعد عنك اى مرض و شر يارب عارفه انى ببقا رخمه كتير و بضايقك بس والله بحبك قد الدنيا و مقدرش ازعلك منى اسفه على كل مره ضايقتك فيها و اسفه على كل مره زعلتك منى بحبك ي احلا و اجمل واحده فى الدنيا ي احن قلب فى حياتى بحبك ي مامى قد الدنيا كلها ربنا يديمك نعمه فى حياتى و ميحرمناش من ضحكتك و هزارك يارب🥹❤️❤️❤️❤️❤️❤️❤️❤️🫂🫂🫂
+كل سنة وانت طيب يا أحلى حوسي في العالم ❤️‍🩹❤️‍🩹 احم احم 😂 عمتًا مش عارفة أبدأ إزاي ولا أقول إيه بتكسفف بس هحاول يعني، بس عايزة أقولك بجد أنا مبسوطة إن عندي حد زيك في حياتي، وأحلى من بيكبر سنة وسنين عمرك كلها فرحان، وأشوفك كدا في فرحك ها ها يا حجرة 🥹😂 يمكن أنت متعرفش بس وجودك بيفرق معايا، أوي كلامك وهزارك وطريقتك وكل حاجة صغيرة بتعملها ليا علشان تفرحني بتخليني أسعد واحدة، والله أنا محظوظة إنك في حياتي، وبنرخم على بعض 😂.
+
+أنت أحلى مصدومصق في الدنيا كلها، وصاحبي الوحيد اللي بحب أتكلم معاه وأحكيله وأضحك معاه، وأكون عبيطة وطفلة وهبلة، وبكل حالاتي معاه ❤️‍🩹.
+
+شكرًا إنك موجود معايا، شكرًا على كل مرة بتحاول تضحكني فيها، ولما يكون نفسيتي وحشة بتكون معايا أكتر من نفسي، وشكرًا بجد على كل مرة كنت جنبي فيها، وكل لحظة حلوة فرحتني بسببك.
+
+يارب السنة الجديدة دي تكون حلوة عليك، وتحقق كل اللي نفسك فيه، وأشوفك أحسن وأنجح مستشار في كورة الأرضية 😂، وتفضل دايمًا مبسوط وناجح في حاجات كتيرة أنت بتحبها.
+
+وخليك فاكر إنك أكتر شخص غالي عندي، وعلى قلبي أوي يا حوسو، بحبك يا حوسحوس ❤️🥺.
+
+الأغنية دي بقى تستاهل كل كلمة فيها. 🥹❤️‍🩹
   
 </textarea>
-<button class="btn" onclick="showVideo()">🎥 افتحي الفيديو</button>
+<button class="btn" onclick="showVideo()">🎥 Open The Video</button>
 <video id="vid" controls>
 <source src="amola.mp4" type="video/mp4">
 </video>
@@ -63,7 +76,7 @@ svg{max-width:320px}
 <path d="M75 70 q35 40 70 0" stroke="#c084fc" stroke-width="10" fill="none"/>
 <text x="20" y="190" font-size="18">🌹🌸🌷</text>
 </svg>
-<p><b>بحبك يا أموله… وربنا يخليكي ليا العمر كله. 💜</b></p>
+<p><b>I Love You ya Bestie❤️🥹</b></p>
 </section>
 
 <script>
@@ -88,7 +101,7 @@ qs[i][1].forEach((t,n)=>{let b=document.createElement('button');b.textContent=t;
 }
 function pick(n){
 if(n===qs[i][2]){i++; if(i<qs.length)render(); else finish();}
-else msg.textContent="إجابة جميلة 😂💜 لكن جربي تاني.";
+else msg.textContent="Nice try 😂❤️ But try again.";
 }
 function finish(){
     show('done');
@@ -102,7 +115,11 @@ function finish(){
     },4000);
 }
 function showMessage(){show('message')}
-function showVideo(){document.getElementById('vid').style.display='block';document.getElementById('vid').play().catch(()=>{});}
+function showVideo(){
+document.getElementById('vid').style.display='block';
+document.getElementById('music').pause();
+document.getElementById('vid').play().catch(()=>{});
+}
 for(let k=0;k<24;k++){let s=document.createElement('div');s.className='fl';s.textContent=["🌸","🌷","🌹"][k%3];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*10+"s";document.querySelector('.flowers').appendChild(s);}
 function hearts(){for(let i=0;i<50;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='💜';h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';document.body.appendChild(h);setTimeout(()=>h.remove(),4000)},i*80)}
 function confetti(){
