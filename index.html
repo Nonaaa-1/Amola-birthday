@@ -148,7 +148,7 @@ s.style.left=Math.random()*100+"%";
 s.style.animationDelay=Math.random()*10+"s";
 document.querySelector('.flowers').appendChild(s);
 }
-function hearts(){for(let i=0;i<50;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='💜';h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';document.body.appendChild(h);setTimeout(()=>h.remove(),4000)},i*80)}
+function hearts(){for(let i=0;i<50;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='❤️';h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';document.body.appendChild(h);setTimeout(()=>h.remove(),4000)},i*80)}
 function confetti(){
 const c=document.getElementById('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
 let p=[];for(let i=0;i<180;i++)p.push({x:Math.random()*c.width,y:Math.random()*-c.height,r:2+Math.random()*4,v:2+Math.random()*4,c:["#ff2d55","#ff4d4d","#ffffff"][Math.floor(Math.random()*3)]
