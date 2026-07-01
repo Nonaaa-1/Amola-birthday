@@ -32,7 +32,7 @@ background:#ffe5e5;
 transform:scale(1.03);
 }
 #msg{color:#b00020;height:24px}
-textarea{width:min(700px,95vw);height:220px;border-radius:18px;border:1px solid #d8b8ef;padding:15px}
+textarea{width:min(700px,95vw);height:220px;border-radius:18px;border:2px solid #ffb3b3;padding:15px}
 video{width:min(700px,95vw);border-radius:18px;display:none}
 .flowers{position:fixed;inset:0;pointer-events:none}
 .fl{position:absolute;font-size:22px;animation:f 10s linear infinite}
@@ -140,7 +140,14 @@ document.getElementById('vid').style.display='block';
 document.getElementById('music').pause();
 document.getElementById('vid').play().catch(()=>{});
 }
-for(let k=0;k<24;k++){let s=document.createElement('div');s.className='fl';s.textContent=["🌸","🌷","🌹"][k%3];s.style.left=Math.random()*100+"%";s.style.animationDelay=Math.random()*10+"s";document.querySelector('.flowers').appendChild(s);}
+for(let k=0;k<24;k++){
+let s=document.createElement('div');
+s.className='fl';
+s.textContent=["🎈","❤️","🤍"][k%3];
+s.style.left=Math.random()*100+"%";
+s.style.animationDelay=Math.random()*10+"s";
+document.querySelector('.flowers').appendChild(s);
+}
 function hearts(){for(let i=0;i<50;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent='💜';h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';document.body.appendChild(h);setTimeout(()=>h.remove(),4000)},i*80)}
 function confetti(){
 const c=document.getElementById('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
